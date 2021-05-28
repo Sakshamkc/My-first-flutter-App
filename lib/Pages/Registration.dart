@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:wc_form_validators/wc_form_validators.dart';
 
 
 
@@ -25,6 +26,7 @@ class _RegistrationState extends State<Registration> {
           child: Form(
                     child: Column(
               children: [
+                
                 TextField(
                   decoration: InputDecoration(
                         labelText: 'Full NAME',
@@ -32,18 +34,19 @@ class _RegistrationState extends State<Registration> {
                         contentPadding: EdgeInsets.all(5),
                         
                       ),
-                      
+                    
                     ),
                     SizedBox(
                       height: 20,
                     ),
+                    
                     TextField(
                   decoration: InputDecoration(
                         labelText: 'LAST NAME',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
-                       
+                      
                     ),
                     SizedBox(
                       height: 20,
@@ -54,7 +57,9 @@ class _RegistrationState extends State<Registration> {
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
+                     
                     ),
+                    
                     SizedBox(
                       height: 20,
                     ),
