@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 
 
 
-
 class Registration extends StatefulWidget {
   @override
   _RegistrationState createState() => _RegistrationState();
 }
 
 class _RegistrationState extends State<Registration> {
-
+TextEditingController fullname = TextEditingController();
+  TextEditingController password = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
    List <String> genders = ['Male','Female',];
   String gender;
   bool name =false;
@@ -21,13 +22,17 @@ class _RegistrationState extends State<Registration> {
         title: Text("Registration Form")
       ),
       body: SingleChildScrollView(
+        
         child: Padding(
+          
           padding: const EdgeInsets.all(20.0),
           child: Form(
+            key: _formKey,
                     child: Column(
+                      
               children: [
-                
                 TextField(
+                  
                   decoration: InputDecoration(
                         labelText: 'Full NAME',
                         border: OutlineInputBorder(),
@@ -36,12 +41,15 @@ class _RegistrationState extends State<Registration> {
                       ),
                     
                     ),
+                    
                     SizedBox(
                       height: 20,
                     ),
                     
                     TextField(
+                      
                   decoration: InputDecoration(
+                    
                         labelText: 'LAST NAME',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
@@ -102,8 +110,10 @@ class _RegistrationState extends State<Registration> {
                             elevation: 10,
                           color: Colors.green,
                           onPressed: () {
-                            Navigator.pushNamed(context, "/Registered");
-                          },
+                           
+                            print(Navigator.pushNamed(context, "/Registered"));
+                            },
+                          
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text("Proceed",style: TextStyle(
