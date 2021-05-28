@@ -1,12 +1,15 @@
 
 import 'package:flutter/material.dart';
 
+
+
 class Registration extends StatefulWidget {
   @override
   _RegistrationState createState() => _RegistrationState();
 }
 
 class _RegistrationState extends State<Registration> {
+
    List <String> genders = ['Male','Female',];
   String gender;
   bool name =false;
@@ -27,7 +30,9 @@ class _RegistrationState extends State<Registration> {
                         labelText: 'Full NAME',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
+                        
                       ),
+                      
                     ),
                     SizedBox(
                       height: 20,
@@ -38,6 +43,7 @@ class _RegistrationState extends State<Registration> {
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
+                       
                     ),
                     SizedBox(
                       height: 20,
