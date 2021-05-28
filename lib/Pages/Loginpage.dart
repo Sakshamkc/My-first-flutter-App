@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:wc_form_validators/wc_form_validators.dart';
+
 
 class LoginPage extends StatefulWidget {
   @override
@@ -7,12 +9,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
   bool rememberme = false;
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
           child: Scaffold(
+           
             backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
          title: Text("Hamro App",style: TextStyle(fontSize: 24,color: Colors.white),
@@ -22,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Form(
+              
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                 children : [
@@ -35,15 +40,18 @@ class _LoginPageState extends State<LoginPage> {
                   TextFormField(
                     decoration: InputDecoration(
                         labelText: 'Email',
+                       
                         prefixIcon: Icon(Icons.email),
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
+                     
                   ),
                    SizedBox(
                     height: 20,
                   ),
                   TextFormField(
+                  
                     decoration: InputDecoration(
                       labelText: 'Password',
                       suffixIcon: IconButton(
@@ -64,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.all(5),
                     ),
+                    
                     obscureText: showPassword,
                   ),
                   SizedBox(
@@ -111,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {
                             Navigator.popAndPushNamed(context, "/HomePage");
                           },
+                         
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text("LOGIN",style: TextStyle(
