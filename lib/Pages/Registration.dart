@@ -1,4 +1,4 @@
-import 'package:firstproject/Pages/Loginpage.dart';
+
 import 'package:flutter/material.dart';
 
 class Registration extends StatefulWidget {
@@ -90,17 +90,20 @@ class _RegistrationState extends State<Registration> {
                             child: MaterialButton(
                             elevation: 10,
                           color: Colors.green,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/Registered");
+                          },
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text("Proceed",style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
-                    ),),
+                    ),
+                    ),
                   ),
-
+                            ),
                   ),
-                        ),
+              
                       ],
                     ),
                     SizedBox(
@@ -113,7 +116,7 @@ class _RegistrationState extends State<Registration> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                        Navigator.popAndPushNamed(context, "/");
                       },
                      child: RichText(text: TextSpan(
                                 text: "Go back ?",style: TextStyle(color: Colors.green,decoration: TextDecoration.underline ),

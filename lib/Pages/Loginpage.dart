@@ -1,5 +1,4 @@
 
-import 'package:firstproject/Pages/Registration.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -85,11 +84,17 @@ class _LoginPageState extends State<LoginPage> {
                   Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("Forgot Password?",style: TextStyle(
-                      color: Colors.green,
-                      decoration: TextDecoration.underline,
-                      fontSize: 14,
-                    ),),
+                    InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/Password");
+                          },
+                           child: RichText(text: TextSpan(
+                                text: "Forgot Password? ",style: TextStyle(color: Colors.green,decoration: TextDecoration.underline,fontSize: 14 ),
+                          ),
+                           
+                          ),
+                      
+                    ),
                   ],
 
                 ),
@@ -98,11 +103,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                     Row(
                       children: [
+                        
                         Expanded(
                             child: MaterialButton(
                             elevation: 10,
                           color: Colors.green,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.popAndPushNamed(context, "/HomePage");
+                          },
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text("LOGIN",style: TextStyle(
@@ -124,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                         
                         InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => Registration()));
+                            Navigator.pushNamed(context, "/Registration_page");
                           },
                            child: RichText(text: TextSpan(
                                 text: "Register for free? ",style: TextStyle(color: Colors.green,decoration: TextDecoration.underline ),

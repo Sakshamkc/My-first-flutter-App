@@ -1,4 +1,8 @@
+import 'package:firstproject/Pages/Homepage.dart';
 import 'package:firstproject/Pages/Loginpage.dart';
+import 'package:firstproject/Pages/Registered.dart';
+import 'package:firstproject/Pages/Registration.dart';
+import 'package:firstproject/Password.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +16,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.green),
-      home: LoginPage(),
+      initialRoute: "/",
+      routes: {
+        "/" : (_) => LoginPage(),
+        "/Registration_page" : (_) => Registration(),
+        "/Password" : (_) => Password(),
+        "/Registered" : (_) => Registered(),
+        "/HomePage" : (_) => Homepage(),
+      },
+     
     );
   }
 }
