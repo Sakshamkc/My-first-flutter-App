@@ -9,14 +9,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
+     
   bool rememberme = false;
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
           child: Scaffold(
-           
             backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
          title: Text("Hamro App",style: TextStyle(fontSize: 24,color: Colors.white),
@@ -26,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Form(
-              
+                      key: _formKey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                 children : [
@@ -45,7 +48,11 @@ class _LoginPageState extends State<LoginPage> {
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
-                     
+                    
+                   validator: Validators.compose([
+                     Validators.required('Email is required'),
+                     Validators.email('Invalid email address'),
+                   ]),
                   ),
                    SizedBox(
                     height: 20,
@@ -73,6 +80,8 @@ class _LoginPageState extends State<LoginPage> {
                       contentPadding: EdgeInsets.all(5),
                     ),
                     
+                     validator: Validators.compose(
+                              [Validators.required('password is required')]),
                     obscureText: showPassword,
                   ),
                   SizedBox(
@@ -118,9 +127,15 @@ class _LoginPageState extends State<LoginPage> {
                             elevation: 10,
                           color: Colors.green,
                           onPressed: () {
-                            Navigator.popAndPushNamed(context, "/HomePage");
-                          },
+                             if (_formKey.currentState.validate()) {
+                              print(email.text);
+                              print(password.text);
+                              print(Navigator.popAndPushNamed(context, "/HomePage"));
+                             }
                          
+                            
+                          },
+                          
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text("LOGIN",style: TextStyle(
