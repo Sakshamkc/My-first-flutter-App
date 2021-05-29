@@ -81,7 +81,9 @@ TextEditingController email = TextEditingController();
                     ),
                     
                      validator: Validators.compose(
-                              [Validators.required('password is required')]),
+                              [Validators.required('password is required'),
+                              Validators.minLength(5, 'Password should be more than 5 characters'),
+                              ]),
                     obscureText: showPassword,
                   ),
                   SizedBox(

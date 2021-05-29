@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-
+import 'package:wc_form_validators/wc_form_validators.dart';
 
 
 class Registration extends StatefulWidget {
@@ -10,7 +10,9 @@ class Registration extends StatefulWidget {
 
 class _RegistrationState extends State<Registration> {
 TextEditingController fullname = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController lastname = TextEditingController();
+  TextEditingController address = TextEditingController();
+  TextEditingController genderss = TextEditingController();
   final _formKey = GlobalKey<FormState>();
    List <String> genders = ['Male','Female',];
   String gender;
@@ -31,42 +33,51 @@ TextEditingController fullname = TextEditingController();
                     child: Column(
                       
               children: [
-                TextField(
-                  
-                  decoration: InputDecoration(
-                        labelText: 'Full NAME',
+                 TextFormField(
+                    decoration: InputDecoration(
+                        labelText: 'First Name',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
-                        
                       ),
                     
-                    ),
+                   validator: Validators.compose([
+                     Validators.required('First Name is required'),
+                     
+                   ]),
+                  ),
                     
                     SizedBox(
                       height: 20,
                     ),
                     
-                    TextField(
-                      
-                  decoration: InputDecoration(
-                    
-                        labelText: 'LAST NAME',
+                    TextFormField(
+                    decoration: InputDecoration(
+                        labelText: 'Last Name',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
-                      
-                    ),
+                    
+                   validator: Validators.compose([
+                     Validators.required('Last Name is required'),
+                     
+                   ]),
+                  ),
                     SizedBox(
                       height: 20,
                     ),
-                    TextField(
-                  decoration: InputDecoration(
+                   TextFormField(
+                    decoration: InputDecoration(
                         labelText: 'Address',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
+                    
+                   validator: Validators.compose([
+                     Validators.required('Address is required'),
                      
-                    ),
+                   ]),
+                  ),
+                    
                     
                     SizedBox(
                       height: 20,
@@ -81,6 +92,7 @@ TextEditingController fullname = TextEditingController();
                           child: Text(value),
                           );
                       }).toList(),
+                      
                     onChanged: (
                       String value
                     ) {
@@ -110,8 +122,12 @@ TextEditingController fullname = TextEditingController();
                             elevation: 10,
                           color: Colors.green,
                           onPressed: () {
-                           
+                           if (_formKey.currentState.validate()) {
+                              print(fullname.text);
+                              print(lastname.text);
+                              print(address.text);
                             print(Navigator.pushNamed(context, "/Registered"));
+                           }
                             },
                           
                   child: Padding(
@@ -137,8 +153,9 @@ TextEditingController fullname = TextEditingController();
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.popAndPushNamed(context, "/");
-                      },
+                         Navigator.popAndPushNamed(context, "/LoginPage");
+                         },
+                      
                      child: RichText(text: TextSpan(
                                 text: "Go back ?",style: TextStyle(color: Colors.green,decoration: TextDecoration.underline ),
                           ),

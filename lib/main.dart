@@ -1,7 +1,9 @@
 import 'package:firstproject/Pages/Homepage.dart';
 import 'package:firstproject/Pages/Loginpage.dart';
+import 'package:firstproject/Pages/OTP.dart';
 import 'package:firstproject/Pages/Registered.dart';
 import 'package:firstproject/Pages/Registration.dart';
+import 'package:firstproject/Pages/Success.dart';
 import 'package:firstproject/Password.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
         "/Password" : (_) => Password(),
         "/Registered" : (_) => Registered(),
         "/HomePage" : (_) => Homepage(),
+        "/OtpPassword" : (_) => OtpPassword(),
+        "/Success" : (_) => Success(),
       },
      
     );
