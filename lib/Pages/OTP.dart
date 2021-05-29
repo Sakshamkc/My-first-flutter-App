@@ -48,7 +48,7 @@ class _OtpPasswordState extends State<OtpPassword> {
                                         onPressed: () {
                                            if (_formKey.currentState.validate()) {
                                             print(otp.text);
-                                           print(Navigator.popAndPushNamed(context, "/Success"),);
+                                           print(Navigator.popAndPushNamed(context, "/PasswordChange"),);
                                            }
                                         },
                                 child: Padding(

@@ -10,7 +10,7 @@ class _SuccessState extends State<Success> {
   void initState(){
     super.initState();
     Future.delayed(Duration(seconds: 5),() {
-      Navigator.popAndPushNamed(context, "/LoginPage");
+      Navigator.popAndPushNamed(context, "/");
     });
   }
   Widget build(BuildContext context) {

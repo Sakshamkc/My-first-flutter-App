@@ -91,6 +91,7 @@ TextEditingController fullname = TextEditingController();
                           value: value,
                           child: Text(value),
                           );
+                          
                       }).toList(),
                       
                     onChanged: (
@@ -108,6 +109,7 @@ TextEditingController fullname = TextEditingController();
                           setState(() {
                             name = value;
                           });
+                          
                         }),
                         Text("I accept terms and condition"),
                       ],
