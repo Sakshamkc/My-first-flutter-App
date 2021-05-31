@@ -6,6 +6,9 @@ import 'package:firstproject/Pages/Registered.dart';
 import 'package:firstproject/Pages/Registration.dart';
 import 'package:firstproject/Pages/Success.dart';
 import 'package:firstproject/Password.dart';
+import 'package:firstproject/navbar.dart/Account.dart';
+import 'package:firstproject/navbar.dart/Cart.dart';
+import 'package:firstproject/navbar.dart/Setting.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,13 +24,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       initialRoute: "/",
       routes: {
-        "/" : (_) => LoginPage(),
+        "/" : (_) => Homepage(),
         "/Registration_page" : (_) => Registration(),
         "/Password" : (_) => Password(),
         "/Registered" : (_) => Registered(),
         "/HomePage" : (_) => Homepage(),
         "/OtpPassword" : (_) => OtpPassword(),
         "/Success" : (_) => Success(),
+        "/Setting" : (_) => Setting(),
+        "Account" : (_) => Account(),
+        "Cart" : (_) => Cart(),
         "/PasswordChange" : (_) => PasswordChange(),
       },
      
