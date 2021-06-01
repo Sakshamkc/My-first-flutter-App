@@ -51,7 +51,7 @@ class _PasswordChangeState extends State<PasswordChange> {
                      validator: Validators.compose([
                         Validators.required('Password is required'),
                       ],),
-                      obscureText: showPassword,
+                      obscureText: false,
               ),
               SizedBox(
                 height: 25,
@@ -83,7 +83,7 @@ class _PasswordChangeState extends State<PasswordChange> {
                       validator: Validators.compose([
                         Validators.required('Password is required'),
                       ],),
-                      obscureText: showPassword,
+                      obscureText: false,
               ),
               SizedBox(
                 height: 25,

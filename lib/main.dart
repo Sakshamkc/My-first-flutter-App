@@ -8,6 +8,7 @@ import 'package:firstproject/Pages/Success.dart';
 import 'package:firstproject/Password.dart';
 import 'package:firstproject/navbar.dart/Account.dart';
 import 'package:firstproject/navbar.dart/Cart.dart';
+import 'package:firstproject/navbar.dart/Home.dart';
 import 'package:firstproject/navbar.dart/Setting.dart';
 import 'package:flutter/material.dart';
 
