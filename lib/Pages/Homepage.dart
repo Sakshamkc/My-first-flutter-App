@@ -22,10 +22,7 @@ class _HomepageState extends State<Homepage> {
     return SafeArea(
           child: Scaffold(
             extendBodyBehindAppBar: true,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton:
-         FloatingActionButton(onPressed: () {},
-        child: Icon(Icons.camera_alt),),
+        
         drawer: Drawer(),
         bottomNavigationBar:BottomNavigationBar(
           onTap: 
