@@ -2,6 +2,7 @@
 import 'package:firstproject/Model/product_model.dart';
 import 'package:firstproject/Pages/product_details.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class Cart extends StatefulWidget {
   @override
