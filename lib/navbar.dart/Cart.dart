@@ -2,7 +2,6 @@
 import 'package:firstproject/Model/product_model.dart';
 import 'package:firstproject/Pages/product_details.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -72,6 +71,28 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(),
+       appBar: AppBar(
+          backgroundColor: Colors.green,
+        actions: [Icon(Icons.notifications_active_outlined)],
+        bottom: PreferredSize(child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    suffixIcon: Icon(Icons.search),
+                    contentPadding: EdgeInsets.all(15),
+                  ),
+                ),
+              ),
+        ),
+        preferredSize: Size.fromHeight(70),
+        ),
+        ),
       body: SingleChildScrollView(
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),

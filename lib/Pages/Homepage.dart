@@ -40,30 +40,7 @@ class _HomepageState extends State<Homepage> {
           BottomNavigationBarItem(icon: Icon(Icons.account_balance), title: Text('Account')),
         ],
         ),
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-        actions: [Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Icon(Icons.notifications_active_outlined),
-        )],
-        bottom: PreferredSize(child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    suffixIcon: Icon(Icons.search),
-                    contentPadding: EdgeInsets.all(15),
-                  ),
-                ),
-              ),
-        ),
-        preferredSize: Size.fromHeight(70),
-        ),
-        ),
+        
          body: selectedIndex == 0 ? Home()
         : selectedIndex ==1 ? Setting() :selectedIndex ==2 ? Cart() : selectedIndex ==3 ? Account() : Center(child: Text("Error")),
       ),
