@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -7,77 +7,33 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
-          
-            width: MediaQuery.of(context).size.width,
-               child: Column(
-              children : [
-                Padding(
-        padding: const EdgeInsets.fromLTRB(0,140,0,0),
-        child: CarouselSlider(
-          items: [
-          Container(
-            height: 250,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              image: DecorationImage(
-                image: NetworkImage("https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0,126,0,0),
+          child: Column(
+            children : [
+              SizedBox(
+                  height: 200,
+                  width: MediaQuery.of(context).size.width,
+                  child: Carousel(
+                    indicatorBgPadding: 5,
+                    animationCurve: Curves.easeInOut,
+                    animationDuration: Duration(seconds: 1),
+                    images: [
+                     Image.network("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",fit: BoxFit.cover,),
+                     Image.network("https://st.depositphotos.com/1428083/2946/i/600/depositphotos_29460297-stock-photo-bird-cage.jpg",fit: BoxFit.cover,),
+                     Image.network("https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3VucmlzZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",fit: BoxFit.cover,),
+                     Image.network("https://www.sammobile.com/wp-content/uploads/2019/03/keyguard_default_wallpaper_silver.png",fit: BoxFit.cover,),
+                    ],
+                  )
+),
+            ],
           ),
-          Container(
-            height: 250,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              image: DecorationImage(
-                image: NetworkImage("https://image.shutterstock.com/image-photo/patan-ancient-city-kathmandu-valley-260nw-1137140381.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Container(
-            height: 250,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              image: DecorationImage(
-                image: NetworkImage("https://imgd.aeplcdn.com/476x268/n/cw/ec/38904/mt-15-front-view.jpeg?q=80"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ], 
-        options: CarouselOptions(
-           height: 200,
-           enlargeCenterPage: true,
-              autoPlay: true,
-              aspectRatio: 16/9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayInterval: Duration(seconds: 3),
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
-              scrollDirection: Axis.horizontal,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  currentIndex = index;
-                });
-              },
         ),
-        ),
-                ),
-              ],
-            ),
       ),
-        ),
     );
   }
 }
