@@ -1,3 +1,4 @@
+import 'package:firstproject/Pages/Firstpage.dart';
 import 'package:firstproject/Pages/Homepage.dart';
 import 'package:firstproject/Pages/Loginpage.dart';
 import 'package:firstproject/Pages/OTP.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       initialRoute: "/",
       routes: {
-        "/" : (_) => Homepage(),
+        "/" : (_) => FirstPage(),
+        "/LoginPage" : (_) => LoginPage(),
         "/Registration_page" : (_) => Registration(),
         "/Password" : (_) => Password(),
         "/Registered" : (_) => Registered(),
@@ -36,6 +38,7 @@ class MyApp extends StatelessWidget {
         "Account" : (_) => Account(),
         "Cart" : (_) => Cart(),
         "/PasswordChange" : (_) => PasswordChange(),
+        "/Home" : (_) => Home(),
       },
      
     );
