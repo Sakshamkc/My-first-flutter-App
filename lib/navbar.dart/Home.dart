@@ -10,10 +10,24 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(accountName: Text("Saksham kc"), accountEmail: Text("Sakshamkc10@gmail.com"),
+            currentAccountPicture: CircleAvatar(child: Text("S"),),
+            ),
+             ],
+        ),
+      ),
       appBar: AppBar(
+        leading: Builder(builder: (context) => IconButton(icon: Icon(Icons.home), onPressed: () {
+          Scaffold.of(context).openDrawer();
+        }),),
           backgroundColor: Colors.indigo,
-        actions: [Icon(Icons.notifications_active_outlined)],
+        actions: [Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Icon(Icons.notifications_active_outlined),
+        )],
         bottom: PreferredSize(child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Container(

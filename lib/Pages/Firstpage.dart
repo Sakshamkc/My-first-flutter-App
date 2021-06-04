@@ -9,8 +9,8 @@ class _FirstPageState extends State<FirstPage> {
   @override
   void initState(){
     super.initState();
-    Future.delayed(Duration(seconds: 5),() {
-      Navigator.popAndPushNamed(context, "/LoginPage");
+    Future.delayed(Duration(seconds: 3),() {
+      Navigator.popAndPushNamed(context, "/HomePage");
     });
   }
   Widget build(BuildContext context) {

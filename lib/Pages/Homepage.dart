@@ -37,7 +37,7 @@ class _HomepageState extends State<Homepage> {
           BottomNavigationBarItem(icon: Icon(Icons.home),title: Text('Home')),
           BottomNavigationBarItem(icon: Icon(Icons.settings),title: Text('Settings')),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),title: Text('Products')),
-          BottomNavigationBarItem(icon: Icon(Icons.account_balance), title: Text('Account')),
+          BottomNavigationBarItem(icon: Icon(Icons.help), title: Text('Help')),
         ],
         ),
         

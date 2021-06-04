@@ -11,7 +11,10 @@ class _SettingState extends State<Setting> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings"),
+         leading: Builder(builder: (context) => IconButton(icon: Icon(Icons.settings), onPressed: () {
+          Scaffold.of(context).openDrawer();
+        }),),
+        title: Center(child: Text("Settings")),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -88,6 +91,31 @@ class _SettingState extends State<Setting> {
                 title: Text("About Us",style: TextStyle(fontWeight: FontWeight.bold),),
                 subtitle: Text("Know about Hamro App"),
               ),
+              SizedBox(
+                height: 20,
+              ),
+               Row(
+                      children: [
+                        Expanded(
+                            child: RaisedButton(
+                            elevation: 10,
+                          color: Colors.green,
+                          onPressed: () {
+                          Navigator.pushNamed(context, "/LoginPage");
+                           },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text("Logout",style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                    ),
+                    ),
+                  ),
+                            ),
+                  ),
+              
+                      ],
+                    ),
             ],
             
           ),

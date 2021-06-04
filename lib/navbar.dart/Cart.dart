@@ -2,6 +2,7 @@
 import 'package:firstproject/Model/product_model.dart';
 import 'package:firstproject/Pages/product_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -74,7 +75,9 @@ class _CartState extends State<Cart> {
       drawer: Drawer(),
        appBar: AppBar(
           backgroundColor: Colors.green,
-        actions: [Icon(Icons.notifications_active_outlined)],
+        leading: Builder(builder: (context) => IconButton(icon: Icon(FontAwesome.cart_arrow_down), onPressed: () {
+          Scaffold.of(context).openDrawer();
+        }),),
         bottom: PreferredSize(child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Container(
