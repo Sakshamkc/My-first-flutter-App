@@ -15,7 +15,7 @@ class _FirstPageState extends State<FirstPage> {
   }
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  Image.asset('images/splash.png',fit: BoxFit.cover,height: MediaQuery.of(context).size.height,width: MediaQuery.of(context).size.width,),
+      body:  Image.asset('images/Welcome.png',fit: BoxFit.cover,height: MediaQuery.of(context).size.height,width: MediaQuery.of(context).size.width,),
     );
   }
 }
