@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class Account extends StatefulWidget {
@@ -128,7 +129,7 @@ class _AccountState extends State<Account> {
                 Visibility(
                      visible: isFalse,
                      child: Center(
-                       child: Text("Youc can know all the security tips in this section"),
+                       child: Text("You can know all the security tips in this section"),
                      ),),
                 ListTile(
                   onTap: () {
@@ -153,25 +154,56 @@ class _AccountState extends State<Account> {
                   padding: const EdgeInsets.fromLTRB(10, 15, 20, 10),
                   child: Center(
                     child: Row(
+                      
                       children: [
-                        Center(child: Text("Follow us at",style: TextStyle(fontWeight: FontWeight.bold),),),
+                        
+                        Center(child: 
+                        
+                        Text("Follow us at",style: TextStyle(fontWeight: FontWeight.bold),),),
                         SizedBox(
                           width: 25,
                         ),
-                        Center(child: Icon(FontAwesome.facebook)),
+                        Center(child: 
+                         InkWell(
+                          onTap: () {
+                            launch ('https://www.facebook.com');
+                          },
+                           child: Center(child: Icon(FontAwesome.facebook)),
+                      
+                          ),
+                    ),
+
                         SizedBox(
                           width: 25,
                         ),
-                        Center(child: Icon(FontAwesome.twitter)),
+                         InkWell(
+                          onTap: () {
+                            launch ('https://www.twitter.com');
+                          },
+                           child: Center(child: Icon(FontAwesome.twitter)),
+                      
+                          ),
+                        
+                        SizedBox(
+                          width: 25,
+                        ), 
+                        InkWell(
+                          onTap: () {
+                            launch ('https://www.youtube.com');
+                          },
+                           child: Center(child: Icon(FontAwesome.youtube)),
+                      
+                          ),
                         SizedBox(
                           width: 25,
                         ),
-                        Center(child: Icon(FontAwesome.youtube)),
-                        SizedBox(
-                          width: 25,
-                        ),
-                        Center(child: Icon(FontAwesome.instagram),
-                        ),
+                        InkWell(
+                          onTap: () {
+                            launch ('https://www.instagram.com');
+                          },
+                           child: Center(child: Icon(FontAwesome.instagram)),
+                      
+                          ),
                         
                       ],
                     ),
