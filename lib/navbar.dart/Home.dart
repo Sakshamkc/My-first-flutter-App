@@ -119,11 +119,13 @@ class _HomeState extends State<Home> {
               children: [
                 Card(
                   child: Center(
+                    
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                                                
                         Image.asset("images/profile.png",width: 60,),
-
+                        
                         SizedBox(
                           height: 10,
                         ),
@@ -138,11 +140,13 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        
                         Image.asset('images/hand.png',width: 60,),
-
+                        
                         SizedBox(
                           height: 10,
                         ),
+                        
                         Text("Payment",style: Theme.of(context).textTheme.caption,),
                       ],
                     ),
@@ -154,6 +158,7 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                       
                         Image.asset('images/power-bank.png',width: 60,),
 
                         SizedBox(
@@ -169,6 +174,7 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        
                         Image.asset('images/airliner.png',width: 60,),
 
                         SizedBox(
@@ -185,12 +191,12 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset('images/exchange.png',width: 60,),
-
                         SizedBox(
                           height: 10,
                         ),
                         Text("Transfers",style: Theme.of(context).textTheme.caption,),
                       ],
+                      
                     ),
                   ),
                 ),
@@ -199,6 +205,7 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        
                         Image.asset('images/ticket.png',width: 60,),
 
                         SizedBox(

@@ -101,7 +101,7 @@ class _SettingState extends State<Setting> {
                             elevation: 10,
                           color: Colors.green,
                           onPressed: () {
-                          Navigator.pushNamed(context, "/LoginPage");
+                          Navigator.popAndPushNamed(context, "/LoginPage");
                            },
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
