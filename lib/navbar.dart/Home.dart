@@ -123,9 +123,11 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                                                
-                        Image.asset("images/profile.png",width: 60,),
-                        
+                        InkWell(
+                          onTap: () {
+                          },
+                          child:Image.asset("images/profile.png",width: 60,),
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -140,8 +142,12 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        
-                        Image.asset('images/hand.png',width: 60,),
+                        InkWell(
+                          onTap: () {
+
+                          },
+                          child: Image.asset('images/hand.png',width: 60,),
+                        ),
                         
                         SizedBox(
                           height: 10,
@@ -154,17 +160,29 @@ class _HomeState extends State<Home> {
                 ),
                
                 Card(
+                  
                   child: Center(
+                  
                     child: Column(
+                      
                       mainAxisAlignment: MainAxisAlignment.center,
+                      
                       children: [
-                       
-                        Image.asset('images/power-bank.png',width: 60,),
-
+                       InkWell(
+                         onTap: () {
+                           Navigator.pushNamed(context, "/Topup");
+                         },
+                         child: Image.asset('images/power-bank.png',width: 60,),
+                       ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("topup",style: Theme.of(context).textTheme.caption,),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/Topup");
+                          },
+                          child:Text("topup",style: Theme.of(context).textTheme.caption,),
+                        ),
                       ],
                     ),
                   ),
@@ -174,13 +192,18 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        
-                        Image.asset('images/airliner.png',width: 60,),
-
+                        InkWell(
+                          onTap: () {},
+                          child: Image.asset('images/airliner.png',width: 60,),
+                        ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("Airlines",style: Theme.of(context).textTheme.caption,),
+                        InkWell(
+                          onTap: () {
+                          },
+                          child:Text("Airlines",style: Theme.of(context).textTheme.caption,),
+                        ),
                       ],
                     ),
                   ),
@@ -190,11 +213,21 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset('images/exchange.png',width: 60,),
+                        InkWell(
+                          onTap: () {
+
+                          },
+                          child: Image.asset('images/exchange.png',width: 60,),
+                        ),
+                       
                         SizedBox(
                           height: 10,
                         ),
-                        Text("Transfers",style: Theme.of(context).textTheme.caption,),
+                        InkWell(
+                          onTap: () {},
+                          child: Text("Transfers",style: Theme.of(context).textTheme.caption,),
+                        ),
+                        
                       ],
                       
                     ),
@@ -205,13 +238,20 @@ class _HomeState extends State<Home> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        
-                        Image.asset('images/ticket.png',width: 60,),
+                        InkWell(
+                          onTap: () {},
+                          child:Image.asset('images/ticket.png',width: 60,),
 
+                        ),
+ 
                         SizedBox(
                           height: 10,
                         ),
-                        Text("Ticket",style: Theme.of(context).textTheme.caption,),
+                        InkWell(
+                          onTap: () {},
+                          child: Text("Ticket",style: Theme.of(context).textTheme.caption,),
+                        ),
+ 
                       ],
                     ),
                   ),

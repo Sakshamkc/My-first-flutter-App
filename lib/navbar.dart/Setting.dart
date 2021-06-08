@@ -97,20 +97,17 @@ class _SettingState extends State<Setting> {
                Row(
                       children: [
                         Expanded(
-                            child: RaisedButton(
+                            child: RaisedButton.icon(
                             elevation: 10,
                           color: Colors.green,
                           onPressed: () {
                           Navigator.popAndPushNamed(context, "/LoginPage");
                            },
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text("Logout",style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                    ),
-                    ),
-                  ),
+                           icon: Icon(Icons.logout,color: Colors.white,),
+                           label: Padding(
+                             padding: const EdgeInsets.all(15.0),
+                             child: Text("LOGOUT",style: TextStyle(color: Colors.white,fontSize: 18),),
+                           ),
                             ),
                   ),
               
