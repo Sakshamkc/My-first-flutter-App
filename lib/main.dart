@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       initialRoute: "/",
       routes: {
-        "/" : (_) => Topup(),
+        "/" : (_) => FirstPage(),
         "/LoginPage" : (_) => LoginPage(),
         "/Registration_page" : (_) => Registration(),
         "/Password" : (_) => Password(),
