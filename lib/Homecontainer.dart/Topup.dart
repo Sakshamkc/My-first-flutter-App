@@ -208,7 +208,7 @@ class _TopupState extends State<Topup> {
                         children: [
                           InkWell(
                             onTap: () {
-                              launch('https://www.ncell.axiata.com/en');
+                              launch('https://www.ncell.axiata.com/en/individual/data-and-voice?packageCategories=data-packs');
                             },
                             child: Image.asset("images/ncell.jpg",width: MediaQuery.of(context).size.width,height: 60,),
                           ),
@@ -236,7 +236,7 @@ class _TopupState extends State<Topup> {
                         children: [
                           InkWell(
                             onTap: () {
-                              launch('https://ntc.net.np/');
+                              launch('https://www.ntc.net.np/buy/packages');
                             },
                             child: Image.asset("images/ntc.png",width: MediaQuery.of(context).size.width,height: 50,),
                           ),
@@ -264,7 +264,7 @@ class _TopupState extends State<Topup> {
                         children: [
                           InkWell(
                             onTap: () {
-                              launch("https://www.smarttel.com.np/");
+                              launch("https://www.smarttel.com.np/offer/smart-data-pack");
                             },
                             child:  Image.asset("images/smartcell.png",width: MediaQuery.of(context).size.width,height: 60,),
                           ),
