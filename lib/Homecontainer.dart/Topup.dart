@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
@@ -11,11 +12,11 @@ class Topup extends StatefulWidget {
 class _TopupState extends State<Topup> {
   TextEditingController phone = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(title: Text("Topup"),),
          backgroundColor: Colors.grey.shade300,
          body: SingleChildScrollView(
         child: Form(
@@ -26,7 +27,7 @@ class _TopupState extends State<Topup> {
                 overflow: Overflow.visible,
                 children: [
                   Container(
-                    height: 90,
+                    height: 70,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40),bottomRight: Radius.circular(40)),
@@ -34,7 +35,7 @@ class _TopupState extends State<Topup> {
                       ),
                     ),
                      Positioned(
-                  top: 50,
+                  top: 30,
                   left: 25,
                   child: Container(
                     height: 75,
