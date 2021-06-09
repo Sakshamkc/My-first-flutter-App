@@ -2,7 +2,12 @@ import 'package:firstproject/Homecontainer.dart/Electricity.dart';
 import 'package:firstproject/Homecontainer.dart/Internet.dart';
 import 'package:firstproject/Homecontainer.dart/Khanepani.dart';
 import 'package:firstproject/Homecontainer.dart/Topup.dart';
-import 'package:firstproject/Pages/Firstpage.dart';
+import 'package:firstproject/Internettype.dart/ADSL.dart';
+import 'package:firstproject/Internettype.dart/Arrownet.dart';
+import 'package:firstproject/Internettype.dart/Classictech.dart';
+import 'package:firstproject/Internettype.dart/Subisu.dart';
+import 'package:firstproject/Internettype.dart/Vianet.dart';
+import 'package:firstproject/Internettype.dart/worldlink.dart';
 import 'package:firstproject/Pages/Homepage.dart';
 import 'package:firstproject/Pages/Loginpage.dart';
 import 'package:firstproject/Pages/OTP.dart';
@@ -47,6 +52,12 @@ class MyApp extends StatelessWidget {
         "/Electricity" : (_) => Electricity(),
         "/Khanepani" : (_) => Khanepani(),
         "/Internet" : (_) => Internet(),
+        "/Worldlink" : (_) => Worldlink(),
+        "/Vianet" : (_) => Vianet(),
+        "/Subisu" : (_) => Subisu(),
+        "/ADSL" : (_) => ADSL(),
+        "/Classictech" : (_) => Classictech(),
+        "/Arrownet" : (_) => Arrownet(),
       },
      
     );

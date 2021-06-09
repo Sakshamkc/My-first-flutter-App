@@ -194,7 +194,9 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, "/Internet");
+                          },
                           child: Image.asset('images/internet.png',width: 60,),
                         ),
                         SizedBox(
@@ -202,7 +204,7 @@ class _HomeState extends State<Home> {
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, "Internet");
+                            Navigator.pushNamed(context, "/Internet");
                           },
                           child:Text("Internet",style: Theme.of(context).textTheme.caption,),
                         ),
