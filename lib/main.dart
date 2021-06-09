@@ -1,3 +1,6 @@
+import 'package:firstproject/Homecontainer.dart/Electricity.dart';
+import 'package:firstproject/Homecontainer.dart/Internet.dart';
+import 'package:firstproject/Homecontainer.dart/Khanepani.dart';
 import 'package:firstproject/Homecontainer.dart/Topup.dart';
 import 'package:firstproject/Pages/Firstpage.dart';
 import 'package:firstproject/Pages/Homepage.dart';
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       initialRoute: "/",
       routes: {
-        "/" : (_) => FirstPage(),
+        "/" : (_) => Home(),
         "/LoginPage" : (_) => LoginPage(),
         "/Registration_page" : (_) => Registration(),
         "/Password" : (_) => Password(),
@@ -41,6 +44,9 @@ class MyApp extends StatelessWidget {
         "/PasswordChange" : (_) => PasswordChange(),
         "/Home" : (_) => Home(),
         "/Topup" : (_) => Topup(),
+        "/Electricity" : (_) => Electricity(),
+        "/Khanepani" : (_) => Khanepani(),
+        "/Internet" : (_) => Internet(),
       },
      
     );

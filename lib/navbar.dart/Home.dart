@@ -125,13 +125,14 @@ class _HomeState extends State<Home> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/Electricity");
                           },
-                          child:Image.asset("images/profile.png",width: 60,),
+                          child:Image.asset("images/electricity.png",width: 60,),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text("Profile",style: Theme.of(context).textTheme.caption,),
+                        Text("Electricity",style: Theme.of(context).textTheme.caption,),
                       ],
                     ),
                   ),
@@ -144,16 +145,16 @@ class _HomeState extends State<Home> {
                       children: [
                         InkWell(
                           onTap: () {
-
+                              Navigator.pushNamed(context, "/Khanepani");
                           },
-                          child: Image.asset('images/hand.png',width: 60,),
+                          child: Image.asset('images/water.png',width: 60,),
                         ),
                         
                         SizedBox(
                           height: 10,
                         ),
                         
-                        Text("Payment",style: Theme.of(context).textTheme.caption,),
+                        Text("Khanepani",style: Theme.of(context).textTheme.caption,),
                       ],
                     ),
                   ),
@@ -194,15 +195,16 @@ class _HomeState extends State<Home> {
                       children: [
                         InkWell(
                           onTap: () {},
-                          child: Image.asset('images/airliner.png',width: 60,),
+                          child: Image.asset('images/internet.png',width: 60,),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "Internet");
                           },
-                          child:Text("Airlines",style: Theme.of(context).textTheme.caption,),
+                          child:Text("Internet",style: Theme.of(context).textTheme.caption,),
                         ),
                       ],
                     ),
