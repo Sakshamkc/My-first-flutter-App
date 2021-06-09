@@ -2,11 +2,20 @@ import 'package:firstproject/Homecontainer.dart/Electricity.dart';
 import 'package:firstproject/Homecontainer.dart/Internet.dart';
 import 'package:firstproject/Homecontainer.dart/Khanepani.dart';
 import 'package:firstproject/Homecontainer.dart/Topup.dart';
+import 'package:firstproject/Internettype.dart/3Gvision.dart';
 import 'package:firstproject/Internettype.dart/ADSL.dart';
+import 'package:firstproject/Internettype.dart/Alphacable.dart';
 import 'package:firstproject/Internettype.dart/Arrownet.dart';
+import 'package:firstproject/Internettype.dart/BBN.dart';
+import 'package:firstproject/Internettype.dart/Biratcable.dart';
 import 'package:firstproject/Internettype.dart/Classictech.dart';
+import 'package:firstproject/Internettype.dart/Pokharainternet.dart';
+import 'package:firstproject/Internettype.dart/Skycable.dart';
 import 'package:firstproject/Internettype.dart/Subisu.dart';
+import 'package:firstproject/Internettype.dart/Techmind.dart';
 import 'package:firstproject/Internettype.dart/Vianet.dart';
+import 'package:firstproject/Internettype.dart/Websurfer.dart';
+import 'package:firstproject/Internettype.dart/fiber.dart';
 import 'package:firstproject/Internettype.dart/worldlink.dart';
 import 'package:firstproject/Pages/Homepage.dart';
 import 'package:firstproject/Pages/Loginpage.dart';
@@ -27,7 +36,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,6 +66,15 @@ class MyApp extends StatelessWidget {
         "/ADSL" : (_) => ADSL(),
         "/Classictech" : (_) => Classictech(),
         "/Arrownet" : (_) => Arrownet(),
+        "/Techmind" : (_) => Techmind(),
+        "/Fiber" : (_) => Fiber(),
+        "/Websurfer" : (_) => Websurfer(),
+        "/ThreeVision" : (_) => Threevision(),
+        "/AlphaCable" : (_) => AlphaCable(),
+        "/BBN" : (_) => BBN(),
+        "/BiratCable" : (_) => BiratCable(),
+        "/SkyCable" : (_) => Skycable(),
+        "/PokharaInternet" : (_) => PokharaInternet(),
       },
      
     );

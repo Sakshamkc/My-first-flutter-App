@@ -150,6 +150,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/Techmind");
                           },
                           child:Image.asset("images/Techmind.jpg",width: 60,),
                         ),
@@ -166,6 +167,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/Websurfer");
                           },
                           child:Image.asset("images/websurfer.png",width: 60,),
                         ),
@@ -182,6 +184,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/Fiber");
                           },
                           child:Image.asset("images/fiber.jpg",width: 60,),
                         ),
@@ -198,6 +201,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/PokharaInternet");
                           },
                           child:Image.asset("images/pokharainternet.jpg",width: 60,),
                         ),
@@ -214,6 +218,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/AlphaCable");
                           },
                           child:Image.asset("images/alphacable.png",width: 60,),
                         ),
@@ -230,6 +235,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/ThreeVision");
                           },
                           child:Image.asset("images/3Gvision.png",width: 60,),
                         ),
@@ -246,6 +252,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/BBN");
                           },
                           child:Image.asset("images/BBN.jpg",width: 60,),
                         ),
@@ -262,6 +269,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/BiratCable");
                           },
                           child:Image.asset("images/Biratcable.jpg",width: 60,),
                         ),
@@ -278,6 +286,7 @@ class _InternetState extends State<Internet> {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushNamed(context, "/SkyCable");
                           },
                           child:Image.asset("images/skycable.png",width: 60,),
                         ),
