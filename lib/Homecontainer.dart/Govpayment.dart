@@ -97,6 +97,7 @@ class _GovernmentpaymentState extends State<Governmentpayment> {
                           children: [
                             InkWell(
                               onTap: () {
+                                Navigator.pushNamed(context, "/Foreign");
                               },
                               child:Image.asset("images/foreign.png",width: 60,),
                             ),
