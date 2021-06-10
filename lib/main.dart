@@ -1,4 +1,5 @@
 import 'package:firstproject/Homecontainer.dart/Electricity.dart';
+import 'package:firstproject/Homecontainer.dart/Govpayment.dart';
 import 'package:firstproject/Homecontainer.dart/Internet.dart';
 import 'package:firstproject/Homecontainer.dart/Khanepani.dart';
 import 'package:firstproject/Homecontainer.dart/Movies.dart';
@@ -77,6 +78,7 @@ class MyApp extends StatelessWidget {
         "/SkyCable" : (_) => Skycable(),
         "/PokharaInternet" : (_) => PokharaInternet(),
         "/Movies" : (_) => Movies(),
+        "/Governmentpayment" : (_) => Governmentpayment(),
       },
      
     );

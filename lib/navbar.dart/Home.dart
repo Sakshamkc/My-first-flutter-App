@@ -249,7 +249,9 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, "/Governmentpayment");
+                          },
                           child:Image.asset('images/govpayment.jpg',width: 60,),
 
                         ),
@@ -258,7 +260,9 @@ class _HomeState extends State<Home> {
                           height: 10,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                             Navigator.pushNamed(context, "/Governmentpayment");
+                          },
                           child: Text("Gov.Payment",style: Theme.of(context).textTheme.caption,),
                         ),
  
