@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
         leading: Builder(builder: (context) => IconButton(icon: Icon(Icons.home), onPressed: () {
           Scaffold.of(context).openDrawer();
         }),),
-          backgroundColor: Colors.indigo,
+        backgroundColor: Colors.deepPurple.shade200,
         actions: [Padding(
           padding: const EdgeInsets.all(10.0),
           child: Icon(Icons.notifications_active_outlined),
@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.all(20.0),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(26),
+                  borderRadius: BorderRadius.circular(40),
                   color: Colors.white,
                 ),
                 child: TextField(
