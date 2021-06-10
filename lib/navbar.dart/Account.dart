@@ -30,7 +30,9 @@ class _AccountState extends State<Account> {
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Card(
+            
             child: Column(
+              
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                    Container(

@@ -1,3 +1,4 @@
+import 'package:firstproject/Govpaymenttype.dart/Trafficpolice.dart';
 import 'package:firstproject/Homecontainer.dart/Electricity.dart';
 import 'package:firstproject/Homecontainer.dart/Govpayment.dart';
 import 'package:firstproject/Homecontainer.dart/Internet.dart';
@@ -79,6 +80,7 @@ class MyApp extends StatelessWidget {
         "/PokharaInternet" : (_) => PokharaInternet(),
         "/Movies" : (_) => Movies(),
         "/Governmentpayment" : (_) => Governmentpayment(),
+        "/TrafficPolice" : (_) => Trafficpolice(),
       },
      
     );
