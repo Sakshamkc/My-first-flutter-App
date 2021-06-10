@@ -27,6 +27,10 @@ class _HomeState extends State<Home> {
         actions: [Padding(
           padding: const EdgeInsets.all(10.0),
           child: Icon(Icons.notifications_active_outlined),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Icon(Icons.more_vert),
         )],
         bottom: PreferredSize(child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -219,17 +223,19 @@ class _HomeState extends State<Home> {
                       children: [
                         InkWell(
                           onTap: () {
-
+                             Navigator.pushNamed(context, "/Movies");
                           },
-                          child: Image.asset('images/exchange.png',width: 60,),
+                          child: Image.asset('images/movies.jpg',width: 60,),
                         ),
                        
                         SizedBox(
                           height: 10,
                         ),
                         InkWell(
-                          onTap: () {},
-                          child: Text("Transfers",style: Theme.of(context).textTheme.caption,),
+                          onTap: () {
+                            Navigator.pushNamed(context, "/Movies");
+                          },
+                          child: Text("Movies",style: Theme.of(context).textTheme.caption,),
                         ),
                         
                       ],
@@ -244,7 +250,7 @@ class _HomeState extends State<Home> {
                       children: [
                         InkWell(
                           onTap: () {},
-                          child:Image.asset('images/ticket.png',width: 60,),
+                          child:Image.asset('images/govpayment.jpg',width: 60,),
 
                         ),
  
@@ -253,7 +259,7 @@ class _HomeState extends State<Home> {
                         ),
                         InkWell(
                           onTap: () {},
-                          child: Text("Ticket",style: Theme.of(context).textTheme.caption,),
+                          child: Text("Gov.Payment",style: Theme.of(context).textTheme.caption,),
                         ),
  
                       ],

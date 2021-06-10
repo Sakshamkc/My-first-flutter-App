@@ -1,6 +1,7 @@
 import 'package:firstproject/Homecontainer.dart/Electricity.dart';
 import 'package:firstproject/Homecontainer.dart/Internet.dart';
 import 'package:firstproject/Homecontainer.dart/Khanepani.dart';
+import 'package:firstproject/Homecontainer.dart/Movies.dart';
 import 'package:firstproject/Homecontainer.dart/Topup.dart';
 import 'package:firstproject/Internettype.dart/3Gvision.dart';
 import 'package:firstproject/Internettype.dart/ADSL.dart';
@@ -75,6 +76,7 @@ class MyApp extends StatelessWidget {
         "/BiratCable" : (_) => BiratCable(),
         "/SkyCable" : (_) => Skycable(),
         "/PokharaInternet" : (_) => PokharaInternet(),
+        "/Movies" : (_) => Movies(),
       },
      
     );
