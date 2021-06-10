@@ -63,6 +63,7 @@ class _GovernmentpaymentState extends State<Governmentpayment> {
                           children: [
                             InkWell(
                               onTap: () {
+                                Navigator.pushNamed(context, "/Inland");
                               },
                               child:Image.asset("images/nepal.jpg",width: 60,),
                             ),
@@ -79,6 +80,7 @@ class _GovernmentpaymentState extends State<Governmentpayment> {
                           children: [
                             InkWell(
                               onTap: () {
+                                 Navigator.pushNamed(context, "/LocalGovernment");
                               },
                               child:Image.asset("images/nepal.jpg",width: 60,),
                             ),

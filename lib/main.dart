@@ -1,3 +1,5 @@
+import 'package:firstproject/Govpaymenttype.dart/Inland.dart';
+import 'package:firstproject/Govpaymenttype.dart/Localgov.dart';
 import 'package:firstproject/Govpaymenttype.dart/Trafficpolice.dart';
 import 'package:firstproject/Homecontainer.dart/Electricity.dart';
 import 'package:firstproject/Homecontainer.dart/Govpayment.dart';
@@ -81,6 +83,8 @@ class MyApp extends StatelessWidget {
         "/Movies" : (_) => Movies(),
         "/Governmentpayment" : (_) => Governmentpayment(),
         "/TrafficPolice" : (_) => Trafficpolice(),
+        "/Inland" : (_) => Inland(),
+        "/LocalGovernment" : (_) => LocalGov(),
       },
      
     );
