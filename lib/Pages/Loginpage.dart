@@ -2,18 +2,17 @@
 import 'package:flutter/material.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
 
-
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+TextEditingController emails = TextEditingController();
+  TextEditingController passwords = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-     
+  
   bool rememberme = false;
   bool showPassword = false;
   @override
@@ -130,9 +129,8 @@ TextEditingController email = TextEditingController();
                           color: Colors.green,
                           onPressed: () {
                              if (_formKey.currentState.validate()) {
-                              print(email.text);
-                              print(password.text);
-                              print(Navigator.popAndPushNamed(context, "/HomePage"));
+                              LoginPage();
+                             // print(Navigator.popAndPushNamed(context, "/HomePage"));
                              }
                          
                             

@@ -36,8 +36,11 @@ import 'package:firstproject/navbar.dart/Cart.dart';
 import 'package:firstproject/navbar.dart/Home.dart';
 import 'package:firstproject/navbar.dart/Setting.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -49,7 +52,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.green),
       initialRoute: "/",
       routes: {
-        "/" : (_) => Homepage(),
+        "/" : (_) => LoginPage(),
         "/LoginPage" : (_) => LoginPage(),
         "/Registration_page" : (_) => Registration(),
         "/Password" : (_) => Password(),
