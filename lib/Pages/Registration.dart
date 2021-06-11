@@ -1,6 +1,8 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
+
 
 
 class Registration extends StatefulWidget {
@@ -124,7 +126,7 @@ TextEditingController fullname = TextEditingController();
                             child: MaterialButton(
                             elevation: 10,
                           color: Colors.green,
-                          onPressed: () {
+                          onPressed: (){
                            if (_formKey.currentState.validate()) {
                               print(fullname.text);
                               print(lastname.text);
