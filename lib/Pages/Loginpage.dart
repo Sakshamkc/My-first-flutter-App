@@ -8,8 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-TextEditingController emails = TextEditingController();
-  TextEditingController passwords = TextEditingController();
+TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   
@@ -128,12 +128,11 @@ TextEditingController emails = TextEditingController();
                             elevation: 10,
                           color: Colors.green,
                           onPressed: () {
-                             if (_formKey.currentState.validate()) {
-                              LoginPage();
-                             // print(Navigator.popAndPushNamed(context, "/HomePage"));
-                             }
-                         
-                            
+                           if (_formKey.currentState.validate()) {
+                              print(email.text);
+                              print(password.text);
+                            print(Navigator.pushNamed(context, "/HomePage"));
+                           }
                           },
                           
                   child: Padding(
