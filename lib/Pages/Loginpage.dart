@@ -123,7 +123,7 @@ TextEditingController emails = TextEditingController();
                           onPressed: () {
                             _loginPage();
                           },
-                          
+                        
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text("LOGIN",style: TextStyle(
@@ -180,7 +180,6 @@ TextEditingController emails = TextEditingController();
             FlatButton(child: Text("Cancel"),
               onPressed: () 
             {
-              
               Navigator.of(ctx).pop();
             }, ),
           ],
@@ -194,7 +193,7 @@ TextEditingController emails = TextEditingController();
         return AlertDialog(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           title: Text("Error"),
-          content: Text("${e.message}"),
+          content: Text("Please provide better email"),
           actions: [
             FlatButton(onPressed: () {
               Navigator.of(ctx).pop();
