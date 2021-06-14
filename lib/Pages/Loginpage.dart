@@ -1,6 +1,6 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:wc_form_validators/wc_form_validators.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -8,8 +8,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+TextEditingController emails = TextEditingController();
+  TextEditingController passwords = TextEditingController();
+  final FirebaseAuth _auth =FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
 
   
@@ -47,17 +48,14 @@ TextEditingController email = TextEditingController();
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
-                    
-                   validator: Validators.compose([
-                     Validators.required('Email is required'),
-                     Validators.email('Invalid email address'),
-                   ]),
+                    controller: emails,
+                   
                   ),
                    SizedBox(
                     height: 20,
                   ),
                   TextFormField(
-                  
+                  controller: passwords,
                     decoration: InputDecoration(
                       labelText: 'Password',
                       suffixIcon: IconButton(
@@ -78,11 +76,6 @@ TextEditingController email = TextEditingController();
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.all(5),
                     ),
-                    
-                     validator: Validators.compose(
-                              [Validators.required('password is required'),
-                              Validators.minLength(5, 'Password should be more than 5 characters'),
-                              ]),
                     obscureText: showPassword,
                   ),
                   SizedBox(
@@ -128,11 +121,7 @@ TextEditingController email = TextEditingController();
                             elevation: 10,
                           color: Colors.green,
                           onPressed: () {
-                           if (_formKey.currentState.validate()) {
-                              print(email.text);
-                              print(password.text);
-                            print(Navigator.pushNamed(context, "/HomePage"));
-                           }
+                            _loginPage();
                           },
                           
                   child: Padding(
@@ -175,5 +164,64 @@ TextEditingController email = TextEditingController();
 
       ),
     );
+  }
+  void _loginPage() async{
+    String email = emails.text.trim();
+    String password = passwords.text;
+    if(email.isNotEmpty && password.isNotEmpty) {
+      _auth.signInWithEmailAndPassword(email: emails.text, password: passwords.text).then((user) 
+      {
+        showDialog(context: context, builder: (ctx) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Text("Done"),
+          content: Text("Sign in Success"),
+          actions: [
+            FlatButton(child: Text("Cancel"),
+              onPressed: () 
+            {
+              
+              Navigator.of(ctx).pop();
+            }, ),
+          ],
+        );
+        });
+      })
+      
+      .catchError((e){
+        showDialog(context: context,
+         builder: (ctx) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Text("Error"),
+          content: Text("${e.message}"),
+          actions: [
+            FlatButton(onPressed: () {
+              Navigator.of(ctx).pop();
+            }, child: Text("Cancel")),
+          ],
+        );
+      });
+      });
+    }
+    else{
+      showDialog(context: context, builder: (ctx) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Text("Error"),
+          content: Text("Please provide email and password"),
+          actions: [
+            FlatButton(onPressed: () {
+              Navigator.of(ctx).pop();
+            }, child: Text("Cancel")),
+            FlatButton(onPressed: () {
+              emails.text = "";
+              passwords.text = "";
+              Navigator.of(ctx).pop();
+            }, child: Text("Ok")),
+          ],
+        );
+      });
+    }
   }
 }

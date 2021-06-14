@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
         "/Foreign" : (_) => Foreign(),
       },
      
-    );
+    ); 
   }
 }
 
