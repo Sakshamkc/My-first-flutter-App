@@ -11,11 +11,10 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-TextEditingController fullname = TextEditingController();
-  TextEditingController lastname = TextEditingController();
-  TextEditingController address = TextEditingController();
-  TextEditingController genderss = TextEditingController();
-
+TextEditingController _emailcontroller = TextEditingController();
+  TextEditingController _passwordcontroller = TextEditingController();
+  bool showPassword = false;
+final FirebaseAuth _auth = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
    List <String> genders = ['Male','Female',];
   String gender;
@@ -38,13 +37,13 @@ TextEditingController fullname = TextEditingController();
               children: [
                  TextFormField(
                     decoration: InputDecoration(
-                        labelText: 'First Name',
+                        labelText: 'Email',
                         border: OutlineInputBorder(),
                         contentPadding: EdgeInsets.all(5),
                       ),
-                    
+                    controller: _emailcontroller,
                    validator: Validators.compose([
-                     Validators.required('First Name is required'),
+                     Validators.required('Email is required'),
                      
                    ]),
                   ),
@@ -54,34 +53,29 @@ TextEditingController fullname = TextEditingController();
                     ),
                     
                     TextFormField(
+                  controller: _passwordcontroller,
                     decoration: InputDecoration(
-                        labelText: 'Last Name',
-                        border: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.all(5),
-                      ),
-                    
-                   validator: Validators.compose([
-                     Validators.required('Last Name is required'),
-                     
-                   ]),
-                  ),
-                    SizedBox(
-                      height: 20,
+                      labelText: 'Password',
+                      suffixIcon: IconButton(
+                        
+                        onPressed: (
+                        ) {
+                          if (showPassword == false) {
+                            setState(() {
+                              showPassword = true;
+                            });
+                        }
+                        else{
+                          setState(() {
+                               showPassword = false;
+                          });
+                        }
+                        }, icon: Icon(Icons.remove_red_eye),) ,
+                      border: OutlineInputBorder(),
+                      contentPadding: EdgeInsets.all(5),
                     ),
-                   TextFormField(
-                    decoration: InputDecoration(
-                        labelText: 'Address',
-                        border: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.all(5),
-                      ),
-                    
-                   validator: Validators.compose([
-                     Validators.required('Address is required'),
-                     
-                   ]),
+                    obscureText: showPassword,
                   ),
-                    
-                    
                     SizedBox(
                       height: 20,
                     ),
@@ -127,12 +121,7 @@ TextEditingController fullname = TextEditingController();
                             elevation: 10,
                           color: Colors.green,
                           onPressed: (){
-                           if (_formKey.currentState.validate()) {
-                              print(fullname.text);
-                              print(lastname.text);
-                              print(address.text);
-                            print(Navigator.pushNamed(context, "/Registered"));
-                           }
+                           _signup();
                             },
                           
                   child: Padding(
@@ -175,5 +164,63 @@ TextEditingController fullname = TextEditingController();
         ),
       ),
     );
+  }
+  void _signup() async{
+    final String emailTXT = _emailcontroller.text.trim();
+    final String passwordTXT = _passwordcontroller.text;
+
+    if(emailTXT.isNotEmpty && passwordTXT.isNotEmpty) {
+      _auth.createUserWithEmailAndPassword(
+        email: emailTXT, 
+        password: passwordTXT
+        ).then((user) {
+           showDialog(context: context, builder: (ctx) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Text("Success"),
+          content: Text("Sign UP Process done, now you can sign in"),
+          actions: [
+            FlatButton(child: Text("Ok"),
+              onPressed: () 
+            {
+              Navigator.of(context).pop();
+            }, ),
+          ],
+        );
+        });
+        })
+        .catchError((e){
+           showDialog(context: context, builder: (ctx) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Text("Error"),
+          content: Text("${e.message}"),
+          actions: [
+            FlatButton(child: Text("Ok"),
+              onPressed: () 
+            {
+              Navigator.of(ctx).pop();
+            }, ),
+          ],
+        );
+        });
+        });
+    }
+    else{
+      showDialog(context: context, builder: (ctx) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          title: Text("Error"),
+          content: Text("Please provide email and Password"),
+          actions: [
+            FlatButton(child: Text("Ok"),
+              onPressed: () 
+            {
+              Navigator.of(ctx).pop();
+            }, ),
+          ],
+        );
+        });
+    }
   }
 }

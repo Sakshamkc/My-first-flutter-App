@@ -76,7 +76,7 @@ TextEditingController emails = TextEditingController();
                       border: OutlineInputBorder(),
                       contentPadding: EdgeInsets.all(5),
                     ),
-                    obscureText: showPassword,
+                    obscureText: false,
                   ),
                   SizedBox(
                     height: 10,
