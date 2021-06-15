@@ -136,6 +136,33 @@ TextEditingController emails = TextEditingController();
                         ),
                       ],
                     ),
+                    
+                SizedBox(
+                  height: 20,
+                ),
+                    Row(
+                      children: [
+                        
+                        Expanded(
+                            child: MaterialButton(
+                            elevation: 10,
+                          color: Colors.green,
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/Phone");
+                          },
+                        
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text("Sign-in using Phone",style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                    ),),
+                  ),
+
+                  ),
+                        ),
+                      ],
+                    ),
                     SizedBox(
                       height: 20,
                     ),
