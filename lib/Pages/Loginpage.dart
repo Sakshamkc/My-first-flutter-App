@@ -1,5 +1,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firstproject/Pages/Registration.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,6 +12,7 @@ class _LoginPageState extends State<LoginPage> {
 TextEditingController emails = TextEditingController();
   TextEditingController passwords = TextEditingController();
   final FirebaseAuth _auth =FirebaseAuth.instance;
+  final Firestore _db = Firestore.instance;
   final _formKey = GlobalKey<FormState>();
 
   

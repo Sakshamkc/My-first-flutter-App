@@ -2,6 +2,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 
@@ -11,10 +12,12 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-TextEditingController _emailcontroller = TextEditingController();
-  TextEditingController _passwordcontroller = TextEditingController();
+final TextEditingController _emailcontroller = TextEditingController();
+  final TextEditingController _passwordcontroller = TextEditingController();
   bool showPassword = false;
 final FirebaseAuth _auth = FirebaseAuth.instance;
+final Firestore _db = Firestore.instance; 
+
   final _formKey = GlobalKey<FormState>();
    List <String> genders = ['Male','Female',];
   String gender;
@@ -223,4 +226,10 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
         });
     }
   }
+}
+
+class Firestore {
+  static Firestore instance;
+
+  collection(String s) {}
 }
