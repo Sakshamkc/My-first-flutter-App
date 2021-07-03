@@ -14,7 +14,7 @@ class _PasswordState extends State<Password> {
     return SafeArea(
           child: Scaffold(
         appBar: AppBar(
-           title:Text("Forgot Password?",style: TextStyle(fontSize: 24,color: Colors.black),),
+           title:Text("Forgot Password?",style: TextStyle(fontSize: 24,color: Colors.blueGrey),),
         ),
 
         body: SingleChildScrollView(

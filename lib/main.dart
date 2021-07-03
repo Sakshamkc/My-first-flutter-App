@@ -36,25 +36,37 @@ import 'package:firstproject/navbar.dart/Account.dart';
 import 'package:firstproject/navbar.dart/Cart.dart';
 import 'package:firstproject/navbar.dart/Home.dart';
 import 'package:firstproject/navbar.dart/Setting.dart';
+import 'package:firstproject/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)=> ChangeNotifierProvider(
+        create: (context) => ThemeProvider(),
+        builder: (context, _) {
+          final themeProvider = Provider.of<ThemeProvider>(context); 
     return MaterialApp(
       
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.green),
+      themeMode: themeProvider.themeMode,
+      theme: MyThemes.lightTheme,
+      darkTheme: MyThemes.darkTheme,
       initialRoute: "/",
       routes: {
-        "/" : (_) => LoginPage(),
+        "/" : (_) => Homepage(),
         "/LoginPage" : (_) => LoginPage(),
         "/Registration_page" : (_) => Registration(),
         "/Password" : (_) => Password(),
@@ -96,7 +108,8 @@ class MyApp extends StatelessWidget {
      
     ); 
     
-  }
+  },
+  );
 }
 
 

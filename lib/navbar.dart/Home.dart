@@ -1,5 +1,8 @@
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:firstproject/provider/theme_provider.dart';
+import 'package:firstproject/widget/changetheme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -9,6 +12,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
+        ? 'DarkTheme'
+        : 'LightTheme';
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -24,14 +30,10 @@ class _HomeState extends State<Home> {
           Scaffold.of(context).openDrawer();
         }),),
         backgroundColor: Colors.deepPurple.shade200,
-        actions: [Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Icon(Icons.notifications_active_outlined),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Icon(Icons.more_vert),
-        )],
+        actions: [
+          ChangeThemeButtonWidget(),
+        ],
+        
         bottom: PreferredSize(child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Container(

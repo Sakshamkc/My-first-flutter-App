@@ -1,7 +1,10 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firstproject/Pages/Registration.dart';
+import 'package:firstproject/provider/theme_provider.dart';
+import 'package:firstproject/widget/changetheme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,12 +22,22 @@ TextEditingController emails = TextEditingController();
   bool rememberme = false;
   bool showPassword = false;
   @override
+  void initState() {
+    super.initState();
+  }
   Widget build(BuildContext context) {
+    final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
+        ? 'DarkTheme'
+        : 'LightTheme';
     return SafeArea(
           child: Scaffold(
-            backgroundColor: Colors.grey.shade300,
         appBar: AppBar(
-         title: Text("Hamro App",style: TextStyle(fontSize: 24,color: Colors.white),
+          actions: [
+            ChangeThemeButtonWidget(),
+          ],
+         title: Center(
+           child: Text("Hamro App",style: TextStyle(fontSize: 24,color: Colors.blueGrey),
+           ),
          ),
         ),
         body: SingleChildScrollView(
