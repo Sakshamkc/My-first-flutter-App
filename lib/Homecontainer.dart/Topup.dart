@@ -17,7 +17,6 @@ class _TopupState extends State<Topup> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(title: Text("Topup"),),
-         backgroundColor: Colors.grey.shade300,
          body: SingleChildScrollView(
         child: Form(
           key: _formKey,

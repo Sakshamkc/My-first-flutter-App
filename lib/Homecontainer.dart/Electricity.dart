@@ -22,7 +22,6 @@ class _ElectricityState extends State<Electricity> {
           padding: const EdgeInsets.all(10.0),
           child: Icon(Icons.info),
         )],),
-         backgroundColor: Colors.grey.shade300,
          body: SingleChildScrollView(
         child: Form(
           key: _formKey,

@@ -17,7 +17,7 @@ class _KhanepaniState extends State<Khanepani> {
     return  SafeArea(
       child: Scaffold(
         appBar: AppBar(title: Text("Khanepani Payment"),),
-         backgroundColor: Colors.grey.shade300,
+        
          body: SingleChildScrollView(
         child: Form(
           key: _formKey,
