@@ -1,6 +1,6 @@
 # firstproject
 
-A new Flutter project. Its still under process. Hope to finish it soon !
+My First Flutter project App and its still under process. Hope to finish it soon !
 
 ## Getting Started
 
